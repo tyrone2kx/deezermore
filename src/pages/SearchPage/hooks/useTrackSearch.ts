@@ -5,6 +5,7 @@ import { NotificationManager } from "react-notifications";
 import { useDebounce } from "use-debounce";
 import { httpClient } from "api";
 import { IResult } from "utils/types";
+import { handleError } from "utils/handleError";
 
 const useTrackSearch = () => {
   const handle = useLoading();
@@ -25,8 +26,7 @@ const useTrackSearch = () => {
         );
       }
     } catch (error) {
-      console.log({ error });
-      NotificationManager.error("An error occurred.");
+      handleError(error)
     } 
     finally {
       handle.stopLoading();

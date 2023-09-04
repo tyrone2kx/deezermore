@@ -28,6 +28,7 @@ export const searchTracks = onRequest(async (req, res) => {
       });
     }
   } catch (error) {
+    console.log({error})
     res.status(500).send({
       status: "failed",
       data: [],

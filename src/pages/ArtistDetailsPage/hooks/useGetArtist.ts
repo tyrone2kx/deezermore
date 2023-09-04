@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { IAlbum, IArtist, IResult } from "utils/types";
 import { NotificationManager } from "react-notifications";
 import useLoading from "utils/useLoading";
+import { handleError } from "utils/handleError";
 
 interface Props {
   id?: string;
@@ -47,9 +48,7 @@ const useGetArtist = ({ id }: Props) => {
         setSkip(prev => prev+25)
       }
     } catch (error) {
-      NotificationManager.error(
-        "An error occurred while fetching more albums."
-      );
+      handleError(error, "An error occurred while fetching more albums.")
     }
     finally {
       handle2.stopLoading()

@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+To use API features, temporarily request access on [Cors Anywhere](https://cors-anywhere.herokuapp.com/corsdemo)
+
 ## Available Scripts
 
 In the project directory, you can run:
